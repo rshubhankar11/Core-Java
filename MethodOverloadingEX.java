@@ -7,6 +7,9 @@
  * 
  * Method Over loading can be done in same class or in two different class
  * having IS-A Realtionship(Parrent Child Relationship/Inhertance)
+ * 
+ * We can write two or more class in same file if we dont specify with any
+ * access specifier (like public or private )
  */
 class MethodOverloadingEX {
 

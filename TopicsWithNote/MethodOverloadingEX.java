@@ -1,5 +1,7 @@
+package TopicsWithNote;
+
 /**
- * MethodOverloadingEX
+ * Method Overloading
  * 
  * It is a process of sepcifing multiple method having same name and different
  * mehod signature (Which is different number of Parameters , type of Parametes
@@ -10,6 +12,17 @@
  * 
  * We can write two or more class in same file if we dont specify with any
  * access specifier (like public or private )
+ * 
+ * 
+ * Note Upadted:
+ * Method Overloading allows different methods to have the same name, but
+ * different signatures where the signature can differ by the number of input
+ * parameters or type of input parameters, or a mixture of both.
+ * 
+ * Method overloading is also known as Compile-time Polymorphism, Static
+ * Polymorphism, or Early binding in Java. In Method overloading compared to
+ * parent argument, child argument will get the highest priority.
+ * 
  */
 class MethodOverloadingEX {
 

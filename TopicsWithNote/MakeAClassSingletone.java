@@ -1,4 +1,4 @@
-package InterviewPrograms;
+package TopicsWithNote;
 
 /**
  * MakeAClassSingletone

@@ -1,3 +1,5 @@
+package TopicsWithNote;
+
 /**
  * demo
  * Static block will be exicuted at the class loading time so it will be

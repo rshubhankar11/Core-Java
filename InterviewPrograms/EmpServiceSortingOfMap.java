@@ -8,6 +8,34 @@ import java.util.stream.Collectors;
  * We will sort a map using java 8 stream API on basis of key of map and value
  * of map .
  * Also in value we will comapir particualr fields
+ * 
+ * 
+ * We also can sort the map using comparable .
+ * in that case we need to implements Comparable<Employee> in our entiy calss
+ * and need to override compareTo() and need to provide our own logic of
+ * comparison
+ * 
+ * public class Employee implements Comparable<Employee> {
+ * 
+ * private Long id;
+ * private String name;
+ * 
+ * // constructor, getters, setters
+ * 
+ * // override equals and hashCode
+ * 
+ * @Override
+ *           public int compareTo(Employee employee) {
+ *           return (int)(this.id - employee.getId());
+ *           }
+ *           }
+ * 
+ *           Next, we store the entries in the TreeMap by using its constructor
+ * 
+ *           TreeMap<String, Employee> sorted = new TreeMap<>(map);
+ * 
+ *           we an also use putAll()
+ * 
  */
 public class EmpServiceSortingOfMap {
     /**

@@ -1,8 +1,8 @@
-package InterviewPrograms;
+
 
 /*
- * This is DTO class for Employee whic we will 
- * user in our programs to solve some Interview quistions
+ * This is DTO class for Employee whic we will user in our programs to solve some Interview
+ * quistions
  */
 public class Employee {
 

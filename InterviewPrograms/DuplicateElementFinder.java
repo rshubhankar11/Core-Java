@@ -1,4 +1,4 @@
-package InterviewPrograms;
+
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -13,6 +13,7 @@ public class DuplicateElementFinder {
         List<Integer> asList = Arrays.asList(10, 23, 44, 55, 1, 10, 11, 1, 1, 1);
         HashSet<Integer> hashSet = new HashSet<>();
 
-        asList.stream().filter(a -> !hashSet.add(a)).collect(Collectors.toSet()).forEach(a -> System.out.println(a));
+        asList.stream().filter(a -> !hashSet.add(a)).collect(Collectors.toSet())
+                .forEach(a -> System.out.println(a));
     }
 }

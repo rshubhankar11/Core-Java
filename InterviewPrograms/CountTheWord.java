@@ -1,4 +1,4 @@
-package InterviewPrograms;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,9 +9,8 @@ import java.util.stream.Collectors;
 /**
  * CountTheWord
  * 
- * Count the no of occurrence of words in given string using Java 8
- * Input: "welcome to code decode and code decode welcome you B";
- * Output: [code=2, and=1, to=1, decode=2, welcome=2, you=1}
+ * Count the no of occurrence of words in given string using Java 8 Input: "welcome to code decode
+ * and code decode welcome you B"; Output: [code=2, and=1, to=1, decode=2, welcome=2, you=1}
  */
 public class CountTheWord {
 

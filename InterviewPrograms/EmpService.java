@@ -1,4 +1,4 @@
-package InterviewPrograms;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,10 +7,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /*
- * EmpService class contain some program asked in interview with java 8
- * and using DTOs
- * Like modification based on some conditons
- * sorting on some conditions
+ * EmpService class contain some program asked in interview with java 8 and using DTOs Like
+ * modification based on some conditons sorting on some conditions
  */
 public class EmpService {
     public static void main(String[] args) {
@@ -41,8 +39,7 @@ public class EmpService {
         // .sorted(Comparator.comparingInt(Employee::getAge).thenComparing(Employee::getName))
         // .collect(Collectors.toList());
         List<Employee> sortedEmpListBasedOnAge = employees.stream()
-                .sorted(Comparator.comparingInt(Employee::getAge))
-                .collect(Collectors.toList());
+                .sorted(Comparator.comparingInt(Employee::getAge)).collect(Collectors.toList());
         System.out.println(sortedEmpListBasedOnAge);
     }
 

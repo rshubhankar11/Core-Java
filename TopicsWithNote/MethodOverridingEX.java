@@ -1,4 +1,3 @@
-package TopicsWithNote;
 
 /**
  * Method Overriding

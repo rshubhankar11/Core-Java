@@ -1,29 +1,23 @@
-import java.nio.channels.ClosedSelectorException;
+
 import java.util.Arrays;
 
-import javax.swing.text.AbstractDocument.Content;
 
-import org.w3c.dom.css.Counter;
 
 /**
  * InfosysInterviewQ
  * 
  * 
  * 
- * Write a function:
- * class Solution { public int solution(int[] A); }
- * that, given an array A of N integers, returns the smallest positive integer
- * (greater than 0) that does not occur in A.
- * For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
- * Given A = [1, 2, 3], the function should return 4.
- * Given A = [−1, −3], the function should return 1.
+ * Write a function: class Solution { public int solution(int[] A); } that, given an array A of N
+ * integers, returns the smallest positive integer (greater than 0) that does not occur in A. For
+ * example, given A = [1, 3, 6, 4, 1, 2], the function should return 5. Given A = [1, 2, 3], the
+ * function should return 4. Given A = [−1, −3], the function should return 1.
  */
 
 public class InfosysInterviewQ {
 
     /**
-     * This method will return the smallest posetive number which is not present in
-     * the array
+     * This method will return the smallest posetive number which is not present in the array
      * 
      * @param array
      * @return
@@ -56,7 +50,7 @@ public class InfosysInterviewQ {
     public static void main(String[] args) {
         // int[] A = new int[] { 1, 3, 6, 4, 1, 2 };
         // int[] A = new int[] { 1, 2, 3 };
-        int[] A = new int[] { -1, -3 };
+        int[] A = new int[] {-1, -3};
 
         // int[] A = new int[] { -10000, 10000, 1, 999, 2 };
 

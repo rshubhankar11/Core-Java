@@ -1,21 +1,21 @@
 ----------------Microservices----------------
 1.Config Server:
 ----------------
-	a.Config Server use to handel common configuration of diffrent microservices so
+	a. Config Server use to handel common configuration of diffrent microservices so
 	that we dont have to repeat same configuration in every service .
-	b.For example we have comon configuration of our Eureka client in every service
-	fro that we can create a cofig server and in other services we can simply 
+	b. For example we have comon configuration of our Eureka client in every service
+	for that we can create a cofig server and in other services we can simply 
 	refer to our config server.
-	c.To setup config server we have to use dependacy:
+	c. To setup config server we have to use dependacy:
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
-	d.We have to create a git repo where we will store our application.yml file
+	d. We have to create a git repo where we will store our application.yml file
 	for diffrent diffrent sping profile for example application-dev.yml and 
 	application-prod.yml
-	e.config-server properties configuration:
+	e. config-server properties configuration:
 		spring:
   			application:
    			 name: CONFI-SERVER
@@ -27,7 +27,7 @@
 			          uri: https://github.com/rshubhankar11/Microservice-Configurations
 			          clone-on-start: true
 
-	d.config-server properties to use in client service:
+	d. config-server properties to use in client service:
 		spring:
 		  config:
 		    import: optional:configserver:http://localhost:8085
@@ -37,14 +37,14 @@
 
 2.Service-Registry:
 -------------------
-	a.Useing service-Registry we can register all our services.
-	b.For example if you want to access one service in another servies then 
+	a. Useing service-Registry we can register all our services.
+	b. For example if you want to access one service in another servies then 
 	we have to use port number and the the api path. But that port number
 	can be changed at any time . So if it got changed the application will break
-	c.If you have registered our service in service-registry the we can call the
+	c. If you have registered our service in service-registry then we can call the
 	service with its name instead of port number . And in feature if the port 
 	number changed that will not impact our services.
-	d.Deppendacy :
+	d. Deppendacy :
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter</artifactId>
@@ -56,7 +56,7 @@
 
 		</dependency>
 
-	e.We have to annotate our main application class with :
+	e. We have to annotate our main application class with :
 
 		@EnableEurekaServer
 	f. properties configuration:
@@ -66,7 +66,7 @@
 		eureka.client.register-with-eureka=false
 		eureka.client.fetch-registry=false
 
-	g.In order to register one service under our service registry we have to add 
+	g. In order to register one service under our service registry we have to add 
 		Eureka client dependancy:
 
 		<dependency>
@@ -90,12 +90,12 @@
 
 3.API-Getway:
 -------------
-	a.API-Getway as the name suggested it act like a get way to our microservices.
-	b.We can call all our services using API-Getway.
-	c.Request form front end/user will come to API-Getway and then it decides 
+	a. API-Getway as the name suggested it act like a get way to our microservices.
+	b. We can call all our services using API-Getway.
+	c. Request form front end/user will come to API-Getway and then it decides 
 	whic service it should call.
-	d.We can implement spring scurity to our API-Getway in ourder to scure our services .
-	e.Dependacy:
+	d. We can implement spring scurity to our API-Getway in ourder to scure our services .
+	e. Dependacy:
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-gateway</artifactId>

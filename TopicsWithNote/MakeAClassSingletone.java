@@ -45,10 +45,10 @@
  * 
  * 2. Provide global access to that instance by
  * 
- * . Declaring all constructors of the class to be private.
- * . Providing a static method that returns a reference to the instance. The
+ * 3. Declaring all constructors of the class to be private.
+ * 4. Providing a static method that returns a reference to the instance. The
  * lazy initialization concept is used to write the static methods.
- * . The instance is stored as a private static variable.
+ * 5. The instance is stored as a private static variable.
  * 
  */
 

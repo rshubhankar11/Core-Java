@@ -2,9 +2,9 @@
 /**
  * Method Overriding
  * 
- * It is process of specifing two method having same mthod name and same
- * signature and same returen type in two diffrent classess having IS-A
- * Realtionship
+ * It is process of specifying two method having same method name and same
+ * signature and same return type in two different classes having IS-A
+ * Relationship
  * 
  * It can not be implemented in single class
  * 
@@ -34,7 +34,7 @@
  */
 class MethodOverridingEX {
     void methodOne(int a) {
-        System.out.println("In Parrent class methodOne");
+        System.out.println("In Parent class methodOne");
     }
 }
 
@@ -44,9 +44,9 @@ class MethodOverridingEXChild extends MethodOverridingEX {
     }
 
     public static void main(String[] args) {
-        // Using parrent class object we only can access parrent class methods
-        MethodOverridingEX parrent = new MethodOverridingEX();
-        parrent.methodOne(1);
+        // Using parent class object we only can access parent class methods
+        MethodOverridingEX parent = new MethodOverridingEX();
+        parent.methodOne(1);
 
         // Using child class object we can access child class methods
         MethodOverridingEXChild child = new MethodOverridingEXChild();

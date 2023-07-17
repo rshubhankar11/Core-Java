@@ -20,7 +20,7 @@ public class StringJoinerExProgram {
 
         // Adding elements to above List
         al.add("Ram");
-        al.add("Shyam");
+        al.add("Sham");
         al.add("Alice");
         al.add("Bob");
 

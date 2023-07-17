@@ -1,128 +1,130 @@
 ----------------Microservices----------------
 1.Config Server:
-----------------
-	a. Config Server use to handel common configuration of diffrent microservices so
-	that we dont have to repeat same configuration in every service .
-	b. For example we have comon configuration of our Eureka client in every service
-	for that we can create a cofig server and in other services we can simply 
-	refer to our config server.
-	c. To setup config server we have to use dependacy:
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-		</dependency>
 
-	d. We have to create a git repo where we will store our application.yml file
-	for diffrent diffrent sping profile for example application-dev.yml and 
-	application-prod.yml
-	e. config-server properties configuration:
-		spring:
-  			application:
-   			 name: CONFI-SERVER
+---
 
-  			cloud:
-			    config:
-			      server:
-			        git:
-			          uri: https://github.com/rshubhankar11/Microservice-Configurations
-			          clone-on-start: true
+    a. Config Server use to handel common configuration of diffrent microservices so
+    that we dont have to repeat same configuration in every service .
+    b. For example we have comon configuration of our Eureka client in every service
+    for that we can create a cofig server and in other services we can simply
+    refer to our config server.
+    c. To setup config server we have to use dependacy:
+    	<dependency>
+    		<groupId>org.springframework.cloud</groupId>
+    		<artifactId>spring-cloud-config-server</artifactId>
+    	</dependency>
 
-	d. config-server properties to use in client service:
-		spring:
-		  config:
-		    import: optional:configserver:http://localhost:8085
-		  application:
-		    name: HOTEL-SERVICE
+    d. We have to create a git repo where we will store our application.yml file
+    for diffrent diffrent sping profile for example application-dev.yml and
+    application-prod.yml
+    e. config-server properties configuration:
+    	spring:
 
+application:
+name: CONFI-SERVER
 
-2.Service-Registry:
--------------------
-	a. Useing service-Registry we can register all our services.
-	b. For example if you want to access one service in another servies then 
-	we have to use port number and the the api path. But that port number
-	can be changed at any time . So if it got changed the application will break
-	c. If you have registered our service in service-registry then we can call the
-	service with its name instead of port number . And in feature if the port 
-	number changed that will not impact our services.
-	d. Deppendacy :
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter</artifactId>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+cloud:
+config:
+server:
+git:
+uri: https://github.com/rshubhankar11/Microservice-Configurations
+clone-on-start: true
 
-		</dependency>
+    d. config-server properties to use in client service:
+    	spring:
+    	  config:
+    	    import: optional:configserver:http://localhost:8085
+    	  application:
+    	    name: HOTEL-SERVICE
 
-	e. We have to annotate our main application class with :
+## 2.Service-Registry:
 
-		@EnableEurekaServer
-	f. properties configuration:
+    a. Useing service-Registry we can register all our services.
+    b. For example if you want to access one service in another servies then
+    we have to use port number and the the api path. But that port number
+    can be changed at any time . So if it got changed the application will break
+    c. If you have registered our service in service-registry then we can call the
+    service with its name instead of port number . And in feature if the port
+    number changed that will not impact our services.
+    d. Deppendacy :
+    	<dependency>
+    		<groupId>org.springframework.cloud</groupId>
+    		<artifactId>spring-cloud-starter</artifactId>
+    	</dependency>
+    	<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server -->
+    	<dependency>
+    		<groupId>org.springframework.cloud</groupId>
+    		<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 
-		server.port=8761
-		eureka.instance.hostname=localhost
-		eureka.client.register-with-eureka=false
-		eureka.client.fetch-registry=false
+    	</dependency>
 
-	g. In order to register one service under our service registry we have to add 
-		Eureka client dependancy:
+    e. We have to annotate our main application class with :
 
-		<dependency>
+    	@EnableEurekaServer
+    f. properties configuration:
+
+    	server.port=8761
+    	eureka.instance.hostname=localhost
+    	eureka.client.register-with-eureka=false
+    	eureka.client.fetch-registry=false
+
+    g. In order to register one service under our service registry we have to add
+    	Eureka client dependancy:
+
+    	<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
-        And use @EnableEurekaClient on the main class.
+       -- And use @EnableEurekaClient on the main class.
 
     h. properties configuration for registration :
 
     	#Eureka client setup
-		eureka:
-		  instance:
-		    prefer-ip-address: true
-		  client:
-		    fetch-registry: true
-		    register-with-eureka: true
-		    service-url:
-		      defaultZone: http://localhost:8761/eureka
+    	eureka:
+    	  instance:
+    	    prefer-ip-address: true
+    	  client:
+    	    fetch-registry: true
+    	    register-with-eureka: true
+    	    service-url:
+    	      defaultZone: http://localhost:8761/eureka
 
-3.API-Getway:
--------------
-	a. API-Getway as the name suggested it act like a get way to our microservices.
-	b. We can call all our services using API-Getway.
-	c. Request form front end/user will come to API-Getway and then it decides 
-	whic service it should call.
-	d. We can implement spring scurity to our API-Getway in ourder to scure our services .
-	e. Dependacy:
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway</artifactId>
-		</dependency>
+## 3.API-Getway:
 
-	f.Configuraion:
+    a. API-Getway as the name suggested it act like a get way to our microservices.
+    b. We can call all our services using API-Getway.
+    c. Request form front end/user will come to API-Getway and then it decides
+    whic service it should call.
+    d. We can implement spring scurity to our API-Getway in ourder to scure our services .
+    e. Dependacy:
+    	<dependency>
+    		<groupId>org.springframework.cloud</groupId>
+    		<artifactId>spring-cloud-starter-gateway</artifactId>
+    	</dependency>
 
-	
-		spring:
-		  application:
-		    name: API-GATEWAY
+    f.Configuraion:
 
-		  #API GATEWAY Setup
-		  cloud:
-		    gateway:
-		      routes:
-		        - id: USER-SERVICE
-		          uri: lb://USER-SERVICE
-		          predicates:
-		            - Path=/users/**
 
-		        - id: HOTEL-SERVICE
-		          uri: lb://HOTEL-SERVICE
-		          predicates:
-		            - Path=/hotels/**
+    	spring:
+    	  application:
+    	    name: API-GATEWAY
 
-		        - id: RATING-SERVICE
-		          uri: lb://RATING-SERVICE
-		          predicates:
-		            - Path=/ratings/**
+    	  #API GATEWAY Setup
+    	  cloud:
+    	    gateway:
+    	      routes:
+    	        - id: USER-SERVICE
+    	          uri: lb://USER-SERVICE
+    	          predicates:
+    	            - Path=/users/**
+
+    	        - id: HOTEL-SERVICE
+    	          uri: lb://HOTEL-SERVICE
+    	          predicates:
+    	            - Path=/hotels/**
+
+    	        - id: RATING-SERVICE
+    	          uri: lb://RATING-SERVICE
+    	          predicates:
+    	            - Path=/ratings/**

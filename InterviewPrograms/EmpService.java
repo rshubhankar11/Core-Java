@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 /*
  * EmpService class contain some program asked in interview with java 8 and using DTOs Like
- * modification based on some conditons sorting on some conditions
+ * modification based on some conditions sorting on some conditions
  */
 public class EmpService {
     public static void main(String[] args) {
@@ -28,10 +28,10 @@ public class EmpService {
 
         System.out.println(empListWhereSalaryIncreased);
 
-        // This will sort the list based on some codtion , We also can add multiple
-        // compairsion
+        // This will sort the list based on some condition , We also can add multiple
+        // comparison
         //
-        // This will compair the neame alphabaticaly also a
+        // This will compar the name alphabetically also a
         //
         // List<Employee> sortedEmpListBasedOnAge = employees.stream()
         // .sorted(Comparator.comparingInt(Employee::getAge).thenComparing(Employee::getName))

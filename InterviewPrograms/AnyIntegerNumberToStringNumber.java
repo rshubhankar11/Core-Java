@@ -2,25 +2,21 @@ import java.util.Scanner;
 
 /*
  * 
- * This will be the implemnetaion of Java interview quesiton
+ * This will be the implementation of Java interview question
  * 
  * Q.Convert any Number for ex 1,2,3,4 etc to String Number ex One , Two , Three , Four ?
  * 
  */
 class AnyIntegerNumberToStringNumber {
 
-
     public static void main(String[] args) {
 
-        String[] numbers =
-                {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
+        String[] numbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" };
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number one to ten: ");
         int number = scanner.nextInt();
 
         System.out.println(numbers[number - 1]);
-
-
 
     }
 }
@@ -32,13 +28,12 @@ class AnyIntegerNumberToStringNumber {
  * 
  */
 
-
 class NumberToWord {
-    private static final String[] ones = {"", "one", "two", "three", "four", "five", "six", "seven",
+    private static final String[] ones = { "", "one", "two", "three", "four", "five", "six", "seven",
             "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
-            "sixteen", "seventeen", "eighteen", "nineteen"};
-    private static final String[] tens =
-            {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+            "sixteen", "seventeen", "eighteen", "nineteen" };
+    private static final String[] tens = { "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty",
+            "ninety" };
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -93,4 +88,3 @@ class NumberToWord {
  * 
  * The number in words is: one hundredzero
  */
-

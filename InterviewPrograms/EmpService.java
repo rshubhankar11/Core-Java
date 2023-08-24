@@ -10,16 +10,16 @@ import java.util.stream.Collectors;
  */
 public class EmpService {
     public static void main(String[] args) {
-        ArrayList<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("Rabiroshan", 23, 355000));
-        employees.add(new Employee("Pankja", 24, 223000));
-        employees.add(new Employee("Kathiga", 25, 33000));
-        employees.add(new Employee("Jaysree", 27, 234000));
-        employees.add(new Employee("Swathe", 28, 2333000));
-        employees.add(new Employee("Bhagyshree", 21, 2000));
+        ArrayList<EmployeeCognizant> employees = new ArrayList<>();
+        employees.add(new EmployeeCognizant("Rabiroshan", 23, 355000));
+        employees.add(new EmployeeCognizant("Pankja", 24, 223000));
+        employees.add(new EmployeeCognizant("Kathiga", 25, 33000));
+        employees.add(new EmployeeCognizant("Jaysree", 27, 234000));
+        employees.add(new EmployeeCognizant("Swathe", 28, 2333000));
+        employees.add(new EmployeeCognizant("Bhagyshree", 21, 2000));
 
         // This will increase the salary of an employee based on the age
-        List<Employee> empListWhereSalaryIncreased = employees.stream().map(emp -> {
+        List<EmployeeCognizant> empListWhereSalaryIncreased = employees.stream().map(emp -> {
             if (emp.getAge() > 25) {
                 emp.setSalary(emp.getSalary() * 2);
             }
@@ -36,8 +36,8 @@ public class EmpService {
         // List<Employee> sortedEmpListBasedOnAge = employees.stream()
         // .sorted(Comparator.comparingInt(Employee::getAge).thenComparing(Employee::getName))
         // .collect(Collectors.toList());
-        List<Employee> sortedEmpListBasedOnAge = employees.stream()
-                .sorted(Comparator.comparingInt(Employee::getAge)).collect(Collectors.toList());
+        List<EmployeeCognizant> sortedEmpListBasedOnAge = employees.stream()
+                .sorted(Comparator.comparingInt(EmployeeCognizant::getAge)).collect(Collectors.toList());
         System.out.println(sortedEmpListBasedOnAge);
     }
 

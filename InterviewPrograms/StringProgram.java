@@ -6,22 +6,16 @@
 * Out put should be : // I am t serd
  */
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import javax.swing.colorchooser.ColorSelectionModel;
-
 public class StringProgram {
 
     public static void main(String[] args) {
         String s = "I am at amsterdam";
-        // First need to split into a array
-        HashMap<Character, Integer> hashMap = new HashMap<>();
         StringBuilder result = new StringBuilder();
 
         HashSet<Character> hashSet = new HashSet<>();

@@ -9,6 +9,22 @@
 public class StringRemovingDuplicate {
     public static void main(String[] args) {
         String str = "I am at amsterdam";
+        // getLength(str);
+        StringBuilder result = new StringBuilder();
+
+        str.chars().mapToObj(ch -> (char) ch)
+                .forEach(ch -> {
+                    if (Character.isWhitespace(ch)) {
+                        result.append(ch);
+                    } else if (result.indexOf(ch.toString()) < 0) {
+                        result.append(ch);
+                    }
+                });
+
+        System.out.println("------------" + result);
+    }
+
+    private static void getLength(String str) {
         String newstr = new String();
         int length = str.length();
         for (int i = 0; i < length; i++) {

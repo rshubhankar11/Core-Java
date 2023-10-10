@@ -17,6 +17,9 @@ public class StringRelated {
             char[] charArray1 = str1.toCharArray();
             for (int i = 0; i < charArray1.length; i++) {
 
+                // If the charter is not available in the string then
+                // this condition will be true
+
                 if (str2.indexOf(charArray1[i]) < 0) {
                     flag = false;
                     break;
